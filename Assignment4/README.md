@@ -1,0 +1,7 @@
+DATA 612: Assignment 4
+
+This folder works with the dataset provided by the author of the "Easy And Fun With BeautifulSoup". The data are extracted from the Yahoo Finance website and include 90 days of data from November 21, 2019 until April 28, 2020.
+
+I also attempted to load more data with different dates from Yahoo Finance, but in would have involved identifying each symbol for more info. I was able to find another dataset that provides the sectors of each company.
+
+I first have to prepare my first dataset by spliting the symbol and the company name in to two differnt columns so that the Symbol columns from each dataset can be joined. I also drop the name column from the 2nd data set because it provides duplicate information. I then look at the merged stock data and count the null values. There are at least 144 rows that have about 16 NaN. I originally thought to just remove those but for cleaning the remaining data, I want to group what data is being filled in by Symbol. I don't want the median for 52 week range for Amazon to be effected by Apple stock. I imagine that going forward I will need to use groupby and also SimpleImputer from sklearns. I did attempt to try this with the 52 week range but ran into an issue when trying to seperate the column. I also ran into an issue when tying to change earning date to a datetime. This was because some rows show just one date and others have a range. I will need to investigate further.
